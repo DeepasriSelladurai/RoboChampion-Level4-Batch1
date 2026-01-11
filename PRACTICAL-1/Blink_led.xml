@@ -1,0 +1,38 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="io_digitalwrite" id="zZh*y_?~;0-9];HMvzH@" x="61" y="-57">
+    <field name="PIN">12</field>
+    <value name="STATE">
+      <block type="io_highlow" id="{_Acbt+g5xE,qJhY9[F_">
+        <field name="STATE">HIGH</field>
+      </block>
+    </value>
+    <next>
+      <block type="time_delay" id="R1q!PXXHs3K*-ge80LJ^">
+        <value name="DELAY_TIME_MILI">
+          <block type="math_number" id="5Wf!#2_pLwl8HR^!@4eE">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+        <next>
+          <block type="io_digitalwrite" id="9M}`8yq1,ayEMG|sHRhI">
+            <field name="PIN">12</field>
+            <value name="STATE">
+              <block type="io_highlow" id="bafkD1bUFSa[6P#aMbyS">
+                <field name="STATE">LOW</field>
+              </block>
+            </value>
+            <next>
+              <block type="time_delay" id="3hS)NXmkr3Qw0dRXcECJ">
+                <value name="DELAY_TIME_MILI">
+                  <block type="math_number" id="X-O,D[nlb}Hu;5SRJ7[?">
+                    <field name="NUM">1000</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>
