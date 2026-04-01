@@ -1,0 +1,105 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="!:^^BWij}fFFxEQ.Q!94" x="112" y="14">
+    <statement name="SETUP_FUNC">
+      <block type="variables_set" id="q?v47ow`?9!DkbDT+i^j">
+        <field name="VAR">voltage</field>
+        <value name="VALUE">
+          <block type="math_number" id="4yV6m*NO0{*TI;x~b5]A">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="procedures_callnoreturn" id="P`ZFccAL+)=R`K#Vu~N{">
+        <mutation name="fadeIn"></mutation>
+        <next>
+          <block type="procedures_callnoreturn" id="!KV=l~k/s2*1Vfl43HZ,">
+            <mutation name="fadeOut"></mutation>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="GT;GA[/-b`}vSN5Q0iYt" x="106" y="180">
+    <field name="NAME">fadeIn</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="controls_repeat_ext" id="Y`#M`:J-SO{[yY@l-2s8">
+        <value name="TIMES">
+          <block type="math_number" id="Z^_Q6i/9-h*Z?uO;5B%V">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="variables_set" id="jQw5}8{Z0U#pvZl9T{8J">
+            <field name="VAR">voltage</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id="JHuH?g+Ny~~=#z8Uhwh+">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <block type="variables_get" id="Wc(2@MGdtD:^]FUR65+x">
+                    <field name="VAR">voltage</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="/0%(VVHblxcx3NSLQYD5">
+                    <field name="NUM">25</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="e0q6wa70x)EAx,PL8L21">
+                <field name="PIN">10</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="Fq^Ilvzf~lq+=?h8u(5W" x="514" y="212">
+    <field name="NAME">fadeOut</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="controls_repeat_ext" id="^!4`oAd7@5A]7Zf5dq~T">
+        <value name="TIMES">
+          <block type="math_number" id="3j-zJa.Ece9~VcThLvsm">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="variables_set" id="sF*~kTfX:bl4PCo~D5X@">
+            <field name="VAR">voltage</field>
+            <value name="VALUE">
+              <block type="math_arithmetic" id=":ZZf.60R2RViDbFXj(Lx">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <block type="variables_get" id="HyyjN}UOE*F!Di;XohdR">
+                    <field name="VAR">voltage</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="mHRO1P!UeXKMhlNt/8jt">
+                    <field name="NUM">25</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="6BXvV/^jY.!~gb%%atBy">
+                <field name="PIN">10</field>
+                <value name="STATE">
+                  <block type="variables_get" id="r.c08gGX;yC!*3GHHqi.">
+                    <field name="VAR">voltage</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
