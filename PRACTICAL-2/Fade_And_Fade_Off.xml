@@ -1,0 +1,128 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="!fz!cbcg+)xxGtBmqH6!" x="9" y="-2">
+    <statement name="SETUP_FUNC">
+      <block type="variables_set" id="Qa`{DVh)r/!I!d(1I/dE">
+        <field name="VAR">Voltage</field>
+        <value name="VALUE">
+          <block type="math_number" id="7CVwR{`!g3haoE:/FW]S">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="LOOP_FUNC">
+      <block type="procedures_callnoreturn" id="AL0%rXzbR3BS;8D~_5Yo">
+        <mutation name="fadeIn"></mutation>
+        <next>
+          <block type="procedures_callnoreturn" id="8[}m#X,Ikr{7j/4i_W/#">
+            <mutation name="fadeOut"></mutation>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="Uv6xYIzlMNt}V_u-yt[Z" x="11" y="150">
+    <field name="NAME">fadeIn</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="controls_repeat_ext" id="77:rCt(XL)LII[/v;q-H">
+        <value name="TIMES">
+          <block type="math_number" id="W/]+HsfLYx]p.1N2bn64">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="io_digitalwrite" id="8jbL,T1|ht?xd+b90VR3">
+            <field name="PIN">12</field>
+            <value name="STATE">
+              <block type="variables_get" id="HD[k3_5s/:/|jVpqx13t">
+                <field name="VAR">Voltage</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="yd|{dgpH(c;zE=45/Q*d">
+                <field name="VAR">Voltage</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="f6rpeuw7pA^]jOej3ed#">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <block type="variables_get" id="NA7#e)oq[Ke=()q`ZoHj">
+                        <field name="VAR">Voltage</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="CKx[BR/1rUYsXBv#GW4t">
+                        <field name="NUM">25</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="time_delay" id="nh(t5m1po59h~T/1rwl#">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="s/2a2Jyluqb7:amIpLip">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="I033jU6pC7nOXwc}Z070" x="13" y="328">
+    <field name="NAME">fadeOut</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="controls_repeat_ext" id="1WWV/0lLPj(n6{lvtZo~">
+        <value name="TIMES">
+          <block type="math_number" id="qSC8pm1d[JNFKF/2/6^X">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="io_digitalwrite" id=";01Ik1z.Km4H!7XG6vKg">
+            <field name="PIN">12</field>
+            <value name="STATE">
+              <block type="variables_get" id=")H~6#eYpi.FoE~:]HW*V">
+                <field name="VAR">Voltage</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="IT)nQ8voX]eB_}!JGy,v">
+                <field name="VAR">Voltage</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="Xbyse%sN%cFP/UtiT*1Q">
+                    <field name="OP">MINUS</field>
+                    <value name="A">
+                      <block type="variables_get" id="dRYaGT|sZu(xX(mnBA6S">
+                        <field name="VAR">Voltage</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="XT=yu`X%5G_b_l%lHtDw">
+                        <field name="NUM">25</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="time_delay" id="dE{Tk}9IyQ]Bz_^JY/u4">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="M5BJ[,cx88sAcKfWRDK9">
+                        <field name="NUM">1000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
