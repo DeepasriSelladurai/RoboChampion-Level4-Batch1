@@ -1,0 +1,255 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions" id="Cx]uk~[;||.Blm4KLaJ~" x="396" y="-449">
+    <statement name="LOOP_FUNC">
+      <block type="procedures_callnoreturn" id="KbuP@t5Qk{+glt,pQf!_">
+        <mutation name="set Trigger"></mutation>
+        <next>
+          <block type="procedures_callnoreturn" id="#V7h53A^3sY~qCy0*(4^">
+            <mutation name="readEcho"></mutation>
+            <next>
+              <block type="procedures_callnoreturn" id="cqem)?f=Cjx,Vi9+cmEJ">
+                <mutation name="calaulate  Distance"></mutation>
+                <next>
+                  <block type="procedures_callnoreturn" id="kHvBKyPLbS_C#OMe(j0h">
+                    <mutation name="printdistance"></mutation>
+                    <next>
+                      <block type="procedures_callnoreturn" id="-H1z,^]uZWx6?Cyp0SLa">
+                        <mutation name="delay1sec"></mutation>
+                        <next>
+                          <block type="procedures_callnoreturn" id="APK-Pq*V;ZA*ByI`tD|d">
+                            <mutation name="door coles"></mutation>
+                            <next>
+                              <block type="controls_if" id="+43qsMm10)IGTsKl-~aU">
+                                <value name="IF0">
+                                  <block type="logic_operation" id="oYA@(}jo/rjX{pFh#?H9">
+                                    <field name="OP">AND</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="Gk03mU(T23~tMBOT,VIK">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="ZW^V;ZelH@]1+s^_~fZ0">
+                                            <field name="VAR">distance</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="RP`#!jR-sL6eg(?}zl`]">
+                                            <field name="NUM">25</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_compare" id="d/6N,4T:u#%JV(ouU~1m">
+                                        <field name="OP">GT</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="FVN^HP1@s+d3rgt:W5_?">
+                                            <field name="VAR">distance</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="v3BDaXg7:dYHSjpCwevd">
+                                            <field name="NUM">25</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="procedures_callnoreturn" id="P9%n:ic^:_ExiI#4*vI_">
+                                    <mutation name="door open"></mutation>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="serial_setup" id=")W^kF^9)y?8q!]%?VlP@" x="695" y="-170">
+    <field name="SERIAL_ID">Serial</field>
+    <field name="SPEED">9600</field>
+  </block>
+  <block type="procedures_defnoreturn" id="!,Gs]wkwqMZ6)L|5+(Mn" x="132" y="-119">
+    <field name="NAME">set Trigger</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="io_digitalwrite" id="[4LwmX,yb0Drj5?Z;bmp">
+        <field name="PIN">3</field>
+        <value name="STATE">
+          <block type="io_highlow" id=":z1!tO!;,i;~`tN1yLC/">
+            <field name="STATE">LOW</field>
+          </block>
+        </value>
+        <next>
+          <block type="time_delaymicros" id="CKn1P)6lXhN8Yl!jQm.B">
+            <value name="DELAY_TIME_MICRO">
+              <block type="math_number" id="/rk!DM105(lgkkS6=*G+">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+            <next>
+              <block type="io_digitalwrite" id="0jutw![Odx9HHd].-#{8">
+                <field name="PIN">3</field>
+                <value name="STATE">
+                  <block type="io_highlow" id="k**BiCroDn%7[YOm27Me">
+                    <field name="STATE">HIGH</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="time_delaymicros" id="82Wq|^hNN{jkqfE*^!#?">
+                    <value name="DELAY_TIME_MICRO">
+                      <block type="math_number" id="7@R}3YvO-Nn=+DyY){`4">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="io_digitalwrite" id="-@Eq?0Put[r!lQ3G%_mN">
+                        <field name="PIN">3</field>
+                        <value name="STATE">
+                          <block type="io_highlow" id="E%XB!-H^mWZ(B41rojo4">
+                            <field name="STATE">LOW</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="|gJ)L*FG5/CUvGQ~H`oH" x="415" y="29">
+    <field name="NAME">readEcho</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="o4UBkdUYU@z}CCSLrX8^">
+        <field name="VAR">duration</field>
+        <value name="VALUE">
+          <block type="io_pulsein" id=",{xFxa|:Snb7Dcj3laAY">
+            <field name="PULSEPIN">2</field>
+            <value name="PULSETYPE">
+              <shadow type="io_highlow" id="JJj_|Ed@Qbif{3o+/4:F">
+                <field name="STATE">HIGH</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="nMH|Am]@BbidgGLFt(9g" x="420" y="135">
+    <field name="NAME">calaulate  Distance</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="jYO6=3J%pviA;jRuD@UN">
+        <field name="VAR">distance</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="pME-rrHiP{/:l954pS#?">
+            <field name="OP">DIVIDE</field>
+            <value name="A">
+              <block type="variables_get" id="t!bBZ4xPm7ImTp8]SQ01">
+                <field name="VAR">duration</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="q`C0UU8P#vh@+X`4J~x3">
+                <field name="NUM">58</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="f=E#*nj#L|w,cH*Tz6=f" x="418" y="238">
+    <field name="NAME">printdistance</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="serial_print" id="w5cWJb?g#*x,;pWlR1Kf">
+        <field name="SERIAL_ID">Serial</field>
+        <field name="NEW_LINE">FALSE</field>
+        <value name="CONTENT">
+          <block type="text" id=":mzK1+285gaK],XcN3~B">
+            <field name="TEXT">distance</field>
+          </block>
+        </value>
+        <next>
+          <block type="serial_print" id="`v|%xS}:+zpsXR?AlP-K">
+            <field name="SERIAL_ID">Serial</field>
+            <field name="NEW_LINE">FALSE</field>
+            <value name="CONTENT">
+              <block type="variables_get" id="r~f38|GA`!,7qkChZ:P#">
+                <field name="VAR">distance</field>
+              </block>
+            </value>
+            <next>
+              <block type="serial_print" id="0?ryNyMNd)vCD4vc1R3]">
+                <field name="SERIAL_ID">Serial</field>
+                <field name="NEW_LINE">TRUE</field>
+                <value name="CONTENT">
+                  <block type="text" id="*E*h=xKM.1dXt5!CK!)e">
+                    <field name="TEXT">cm</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="px?1f|B;+Y92BsZM(87I" x="416" y="407">
+    <field name="NAME">delay1sec</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="time_delay" id="|W.hFgLedA}}+n;-O]Xa">
+        <value name="DELAY_TIME_MILI">
+          <block type="math_number" id="R}V#x)x9HhCS69ir!`gT">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="81U97Zs(0Yq@j#7!.Coh" x="591" y="449">
+    <field name="NAME">door coles</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="servo_write" id="M(1}~T5BS6],^A{_mc9P">
+        <field name="SERVO_PIN">10</field>
+        <value name="SERVO_ANGLE">
+          <block type="math_number" id="Z{Z.+82+|.D5pfxP}J,B">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="5`^#fZQ?KIxh@Z0K2;)1" x="552" y="489">
+    <field name="NAME">door open</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="servo_write" id="2ghh!C8XiHCab5Qv0|t#">
+        <field name="SERVO_PIN">10</field>
+        <value name="SERVO_ANGLE">
+          <block type="math_number" id=";#V4M[+pFnY.SM]y,b1C">
+            <field name="NUM">180</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
